@@ -1,10 +1,14 @@
 import React from 'react';
-import { Box, Typography, Stack } from '@mui/material';
+import { Box, Typography, Stack, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+import { addToDo } from '../../ReduxComps/Features/TodoSlice';
 
 import bicepcurls from '../../Assets/ExerciseGif/bicepcurls.gif';
 import burpee from '../../Assets/ExerciseGif/burpee.gif';
 import astridejumps from '../../Assets/ExerciseGif/astridejumps.gif';
+
 
 const exercises = [
   { id: 'Bicepcurls', src: bicepcurls, alt: "Bicep curls", text: "Bicep Curls"},
@@ -13,10 +17,16 @@ const exercises = [
 ]
 
 const ExerciseList2 = () => {
+
+  const dispatch = useDispatch();
+
   return (
     <Box mt='50px'>
       <Stack direction='row' flexWrap='wrap' justifyContent='center' sx={{ gap: { lg: '107px', xs: '50px' } }}>
         {exercises.map((exercise, index) => (
+          <Box>
+
+          
           <Link key={index} to={`/exercise/${exercise.id}`}
           onClick={(e) => {
             // e.preventDefault();
@@ -28,6 +38,8 @@ const ExerciseList2 = () => {
           {exercise.text}
         </Typography>
           </Link>
+          <Button style={{ alignSelf: 'center' }} variant='contained' onClick={() => dispatch(addToDo({ id: exercise.id, text: exercise.text, src: exercise.src }))}>Add to list</Button>
+          </Box>
         ))}
 
       </Stack>

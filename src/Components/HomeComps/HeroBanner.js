@@ -26,7 +26,7 @@ const HeroBanner = () => {
         lineHeight='35px' >Explore the exercises that you need to reach your daily fitness goal.</Typography>
 
         <Stack>
-            <a href="/exercises" style={{ fontSize: '22px', textDecoration: 'none', textTransform: 'none', textAlign: 'center', padding: '14px', color: '#fff', backgroundColor: '#ff2625', width: '200px', borderRadius: '8px', marginTop: '44px'}}>Exercise</a>
+            <a href="/list" style={{ fontSize: '22px', textDecoration: 'none', textTransform: 'none', textAlign: 'center', padding: '14px', color: '#fff', backgroundColor: '#ff2625', width: '200px', borderRadius: '8px', marginTop: '44px'}}>To Do List</a>
         </Stack>
 
         <Typography fontWeight={700} fontSize='200px' sx={{ opacity: 0.1, display: {lg: 'block', xs: 'none'}}}>Exercise</Typography>

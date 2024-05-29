@@ -7,6 +7,8 @@ import Footer from './Components/Footer';
 import Home from './Components/Home';
 import Exercises from './Components/Exercises';
 
+import ToDoList from './Components/ToDoComps/ToDoList';
+
 import Details from './Components/ExerciseDetails/Details';
 
 
@@ -18,7 +20,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/exercises' element={<Exercises />} />
         <Route path='/exercise/:exerciseId' element={<Details />}/>
+        <Route path='/list' element={<ToDoList />}/>
       </Routes>
+      {/* <ToDoList /> */}
       <Footer />
     </Box>
   );

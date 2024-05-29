@@ -18,8 +18,16 @@ const Navbar = () => {
             <Stack
             direction='row'
             alignItems='flex-end'
-            fontSize='24px'
-            gap='40px'>
+            sx={{
+                fontSize: {
+                    lg: '24px',
+                    xs: '20px'
+                },
+                gap: {
+                    lg: '40px',
+                    xs: '20px'
+                }
+            }}>
                 <NavLink to='/' style={({isActive}) => ({
                     textDecoration: 'none',
                     color:'#3A1212',
@@ -31,6 +39,14 @@ const Navbar = () => {
                     borderBottom: isActive ? '2px solid #FF2625' : 'none'
                 })}>
                     Exercises
+                </NavLink>
+
+                <NavLink to='/list' style={({ isActive }) => ({
+                    textDecoration: 'none',
+                    color: '#3A1212',
+                    borderBottom: isActive ? '2px solid #FF2625' : 'none'
+                })}>
+                    To-Do List
                 </NavLink>
                 
             </Stack>

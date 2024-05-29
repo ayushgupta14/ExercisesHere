@@ -1,6 +1,9 @@
 import React from 'react';
-import { Box, Typography, Stack } from '@mui/material';
+import { Box, Typography, Stack, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+import { addToDo } from '../../ReduxComps/Features/TodoSlice';
 
 import Archerpushups from '../../Assets/ExerciseGif/ArcherPushups.gif';
 import assistedpullups from '../../Assets/ExerciseGif/assistedpullups.gif';
@@ -19,24 +22,31 @@ const exercises = [
 ];
 
 const ExerciseList = () => {
+  const dispatch = useDispatch();
+
+
   return (
     <Box id='#exercise'>
       <Stack direction='row' flexWrap='wrap' justifyContent='center' sx={{ gap: { lg: '107px', xs: '50px' } }}>
         {exercises.map((exercise, index) => (
-          <Link 
-            key={index} 
-            to={`/exercise/${exercise.id}`}
-            onClick={(e) => {
-              // e.preventDefault();
-              window.scrollTo(0, 0);
-            }} 
-            className='ex-box' 
-            style={{ textDecoration: 'none', textAlign: 'center' }}>
-            <img src={exercise.src} alt={exercise.alt} />
-            <Typography ml="21px" color="#000" fontWeight="bold" sx={{ fontSize: { lg: '24px', xs: '20px' } }} mt="11px" pb="10px" textTransform="capitalize">
-              {exercise.text}
-            </Typography>
-          </Link>
+          <Box display='flex' flexDirection='column' alignItems='center'
+          >
+            <Link
+              key={index}
+              to={`/exercise/${exercise.id}`}
+              onClick={(e) => {
+                // e.preventDefault();
+                window.scrollTo(0, 0);
+              }}
+              className='ex-box'
+              style={{ textDecoration: 'none', textAlign: 'center' }}>
+              <img src={exercise.src} alt={exercise.alt} />
+              <Typography ml="21px" color="#000" fontWeight="bold" sx={{ fontSize: { lg: '24px', xs: '20px' } }} mt="11px" pb="10px" textTransform="capitalize">
+                {exercise.text}
+              </Typography>
+            </Link>
+            <Button variant='contained' onClick={() => dispatch(addToDo({ id: exercise.id, text: exercise.text, src: exercise.src }))}>Add to list</Button>
+          </Box>
         ))}
       </Stack>
     </Box>

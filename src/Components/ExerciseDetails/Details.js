@@ -2,6 +2,9 @@ import React from 'react';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { addToDo } from '../../ReduxComps/Features/TodoSlice';
+
 import exer from './exer';
 
 import Bodyimg from '../../Assets/icons/body-part.png';
@@ -10,9 +13,10 @@ import equip from '../../Assets/icons/equipment.png';
 
 import SimilarExercise from '../ExerciseComps/SimilarExercise';
 
-
-
 const Details = () => {
+
+  const dispatch = useDispatch();
+
   const { exerciseId } = useParams();
   const exes = exer.find(ex => ex.id === exerciseId);
 
@@ -32,6 +36,10 @@ const Details = () => {
           <Typography sx={{ fontSize: { lg: '18px', xs: '15px' } }}>
             {exes.description}
           </Typography>
+
+          <Stack>
+            <Button variant='contained' onClick={() => dispatch(addToDo({ id: exes.id, text: exes.text, src: exes.src }))}>Add to List</Button>
+          </Stack>
 
           <Stack direction='row' alignItems='center' gap='20px'>
             <Button sx={{ background: '#FFF2DB', height: '100px', width: '100px', borderRadius: '50%' }}>

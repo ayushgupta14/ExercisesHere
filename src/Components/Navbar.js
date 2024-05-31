@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import { Stack } from '@mui/material';
+import { Stack, IconButton } from '@mui/material';
 
 import Logo from '../Assets/images/Logo.png'
 
+import { ThemeContext } from '../Context/theme';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+
 const Navbar = () => {
+
+    const {toggleTheme, themeMode} = useContext(ThemeContext);
+
+
     return (
         <Stack
             direction='row'
@@ -48,6 +56,11 @@ const Navbar = () => {
                 })}>
                     To-Do List
                 </NavLink>
+
+                <IconButton onClick={toggleTheme}>
+                    {themeMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                </IconButton>
+                
                 
             </Stack>
         </Stack>

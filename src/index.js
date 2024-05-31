@@ -8,12 +8,16 @@ import store from './ReduxComps/Store';
 
 import { BrowserRouter } from 'react-router-dom';
 
+import ThemeContextProvider from './Context/theme';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <ThemeContextProvider>
+        <App />
+      </ThemeContextProvider>
     </Provider>
   </BrowserRouter>
 );

@@ -45,7 +45,9 @@ const ExerciseList = () => {
                 {exercise.text}
               </Typography>
             </Link>
-            <Button variant='contained' onClick={() => dispatch(addToDo({ id: exercise.id, text: exercise.text, src: exercise.src }))}>Add to list</Button>
+            <Button sx={{
+              mt: '12px'
+            }} variant='outlined' color='error' onClick={() => dispatch(addToDo({ id: exercise.id, text: exercise.text, src: exercise.src }))}>Add to list</Button>
           </Box>
         ))}
       </Stack>

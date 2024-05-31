@@ -12,8 +12,13 @@ import ToDoList from './Components/ToDoComps/ToDoList';
 import Details from './Components/ExerciseDetails/Details';
 
 
+
+
 function App() {
+
+
   return (
+    
     <Box width='400px' sx={{ width: { xl: '1488px' } }} m='auto'>
       <Navbar />
       <Routes>
@@ -25,6 +30,7 @@ function App() {
       {/* <ToDoList /> */}
       <Footer />
     </Box>
+    
   );
 }
 

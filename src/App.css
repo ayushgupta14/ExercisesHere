@@ -7,7 +7,6 @@ body {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-
 }
 
 
@@ -25,7 +24,8 @@ body {
   width: 400px;
   height: 445px;
   background: #fff;
-  border-bottom-left-radius: 20px;
+  /* border-bottom-left-radius: 20px; */
+  border-radius: 25px;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
@@ -36,7 +36,8 @@ body {
 }
 
 .ex-box img {
-  height: 326px;
+  height: 295px;
+  border-radius: 25px;
 }
 
 .ex-box:hover {

@@ -3,7 +3,7 @@ import './App.css';
 import { Box } from '@mui/material';
 
 import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+// import Footer from './Components/Footer';
 import Home from './Components/Home';
 import Exercises from './Components/Exercises';
 
@@ -28,7 +28,7 @@ function App() {
         <Route path='/list' element={<ToDoList />}/>
       </Routes>
       {/* <ToDoList /> */}
-      <Footer />
+      {/* <Footer /> */}
     </Box>
     
   );

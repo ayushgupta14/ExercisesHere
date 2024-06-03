@@ -3,11 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeToDo } from '../../ReduxComps/Features/TodoSlice';
 import { Box, Stack, Button, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+
+
+
 
 const ToDoList = () => {
 
     const todoList = useSelector(state => state.todo.todoList);
     const dispatch = useDispatch();
+
+    const notify = () => toast.error("Exercise removed from list");
+
 
 
     return (
@@ -21,18 +28,26 @@ const ToDoList = () => {
                     <Box key={index} display='flex' flexDirection='column' alignItems='center' >
                         <Box className='ex-box' style={{ textDecoration: 'none', textAlign: 'center' }}>
 
-                        
-                        <Link style={{ textDecoration: 'none' }} to={`/exercise/${item.id}`}>
-                            <img src={item.src} alt="Image" />
-                            <Typography ml='21px' color='#000' fontWeight='bold' sx={{ fontSize: { lg: '24px', xs: '20px' } }} mt="11px" pb="10px" textTransform="capitalize">
-                                {item.text}
-                            </Typography>
-                        </Link>
+
+                            <Link style={{ textDecoration: 'none' }} to={`/exercise/${item.id}`}>
+                                <img src={item.src} alt="Image" />
+                                <Typography ml='21px' color='#000' fontWeight='bold' sx={{ fontSize: { lg: '24px', xs: '20px' } }} mt="11px" pb="10px" textTransform="capitalize">
+                                    {item.text}
+                                </Typography>
+                            </Link>
                         </Box>
 
-                        <Button sx={{
+                        {/* <Button sx={{
                             mt: '12px'
                         }} variant="contained" color="error" onClick={() => dispatch(removeToDo(item.id))}>
+                            Remove
+                        </Button> */}
+                        <Button sx={{
+                            mt: '12px'
+                        }} variant="contained" color="error" onClick={() => {
+                            dispatch(removeToDo(item.id));
+                            notify();
+                        }}>
                             Remove
                         </Button>
                     </Box>

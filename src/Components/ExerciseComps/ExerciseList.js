@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Stack, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 import { useDispatch } from 'react-redux';
 import { addToDo } from '../../ReduxComps/Features/TodoSlice';
@@ -23,6 +24,8 @@ const exercises = [
 
 const ExerciseList = () => {
   const dispatch = useDispatch();
+
+  const notify = () => toast.success("Exercise Added");
 
 
   return (
@@ -47,7 +50,10 @@ const ExerciseList = () => {
             </Link>
             <Button sx={{
               mt: '12px'
-            }} variant='outlined' color='error' onClick={() => dispatch(addToDo({ id: exercise.id, text: exercise.text, src: exercise.src }))}>Add to list</Button>
+            }} variant='outlined' color='error' onClick={() => {
+              dispatch(addToDo({ id: exercise.id, text: exercise.text, src: exercise.src }));
+              notify();
+              }}>Add to list</Button>
           </Box>
         ))}
       </Stack>

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { Toaster } from 'react-hot-toast';
 
 import { Provider } from 'react-redux';
 import store from './ReduxComps/Store';
@@ -17,6 +18,7 @@ root.render(
     <Provider store={store}>
       <ThemeContextProvider>
         <App />
+        <Toaster />
       </ThemeContextProvider>
     </Provider>
   </BrowserRouter>

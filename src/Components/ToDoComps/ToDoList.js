@@ -11,7 +11,7 @@ const ToDoList = () => {
 
 
     return (
-        <Box>
+        <Box height='100vh'>
             <Typography variant='h4' textAlign='center' mt='45px' mb='50px'>
                 To-Do List
             </Typography>

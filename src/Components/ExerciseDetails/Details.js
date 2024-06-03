@@ -38,7 +38,7 @@ const Details = () => {
           </Typography>
 
           <Stack>
-            <Button variant='contained' onClick={() => dispatch(addToDo({ id: exes.id, text: exes.text, src: exes.src }))}>Add to List</Button>
+            <Button variant="outlined" color="error" onClick={() => dispatch(addToDo({ id: exes.id, text: exes.text, src: exes.src }))}>Add to List</Button>
           </Stack>
 
           <Stack direction='row' alignItems='center' gap='20px'>

@@ -11,7 +11,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const Navbar = () => {
 
-    const {toggleTheme, themeMode} = useContext(ThemeContext);
+    const { toggleTheme, themeMode } = useContext(ThemeContext);
 
 
     return (
@@ -24,26 +24,28 @@ const Navbar = () => {
                 <img src={Logo} alt="logo" style={{ width: '48px', height: '48px', margin: '0px 20px' }} />
             </Link>
             <Stack
-            direction='row'
-            alignItems='flex-end'
-            sx={{
-                fontSize: {
-                    lg: '24px',
-                    xs: '20px'
-                },
-                gap: {
-                    lg: '40px',
-                    xs: '20px'
-                }
-            }}>
-                <NavLink to='/' style={({isActive}) => ({
+                direction='row'
+                alignItems='center'
+                justifyContent='center'
+                sx={{
+                    fontSize: {
+                        lg: '24px',
+                        md: '20px',
+                        xs: '14px'
+                    },
+                    gap: {
+                        lg: '40px',
+                        xs: '16px'
+                    }
+                }}>
+                <NavLink to='/' style={({ isActive }) => ({
                     textDecoration: 'none',
-                    color:'#3A1212',
+                    color: '#3A1212',
                     borderBottom: isActive ? '2px solid #FF2625' : 'none'
                 })} >Home</NavLink>
-                <NavLink to='/exercises' style={({isActive}) => ({
+                <NavLink to='/exercises' style={({ isActive }) => ({
                     textDecoration: 'none',
-                    color:'#3A1212',
+                    color: '#3A1212',
                     borderBottom: isActive ? '2px solid #FF2625' : 'none'
                 })}>
                     Exercises
@@ -60,8 +62,8 @@ const Navbar = () => {
                 <IconButton onClick={toggleTheme}>
                     {themeMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                 </IconButton>
-                
-                
+
+
             </Stack>
         </Stack>
     )

@@ -11,11 +11,7 @@ import ToDoList from './Components/ToDoComps/ToDoList';
 
 import Details from './Components/ExerciseDetails/Details';
 
-
-
-
 function App() {
-
 
   return (
     
@@ -27,7 +23,7 @@ function App() {
         <Route path='/exercise/:exerciseId' element={<Details />}/>
         <Route path='/list' element={<ToDoList />}/>
       </Routes>
-      <ToDoList />
+      {/* <ToDoList /> */}
       <Footer />
     </Box>
     

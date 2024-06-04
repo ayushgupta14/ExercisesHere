@@ -28,7 +28,6 @@ const ToDoList = () => {
                     <Box key={index} display='flex' flexDirection='column' alignItems='center' >
                         <Box className='ex-box' style={{ textDecoration: 'none', textAlign: 'center' }}>
 
-
                             <Link style={{ textDecoration: 'none' }} to={`/exercise/${item.id}`}>
                                 <img src={item.src} alt="Image" />
                                 <Typography ml='21px' color='#000' fontWeight='bold' sx={{ fontSize: { lg: '24px', xs: '20px' } }} mt="11px" pb="10px" textTransform="capitalize">
@@ -36,12 +35,6 @@ const ToDoList = () => {
                                 </Typography>
                             </Link>
                         </Box>
-
-                        {/* <Button sx={{
-                            mt: '12px'
-                        }} variant="contained" color="error" onClick={() => dispatch(removeToDo(item.id))}>
-                            Remove
-                        </Button> */}
                         <Button sx={{
                             mt: '12px'
                         }} variant="contained" color="error" onClick={() => {

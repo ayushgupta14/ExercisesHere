@@ -14,6 +14,8 @@ import Details from './Components/ExerciseDetails/Details';
 function App() {
 
   return (
+
+    <Box>
     
     <Box width='400px' sx={{ width: { xl: '1488px' } }} m='auto'>
       <Navbar />
@@ -24,6 +26,7 @@ function App() {
         <Route path='/list' element={<ToDoList />}/>
       </Routes>
       {/* <ToDoList /> */}
+    </Box>
       <Footer />
     </Box>
     

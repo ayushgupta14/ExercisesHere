@@ -43,17 +43,22 @@ const ExerciseList = () => {
               }}
               className='ex-box'
               style={{ textDecoration: 'none', textAlign: 'center' }}>
+
               <img src={exercise.src} alt={exercise.alt} />
+
               <Typography ml="21px" color="#000" fontWeight="bold" sx={{ fontSize: { lg: '24px', xs: '20px' } }} mt="11px" pb="10px" textTransform="capitalize">
                 {exercise.text}
               </Typography>
+
             </Link>
+
             <Button sx={{
               mt: '12px'
             }} variant='outlined' color='error' onClick={() => {
               dispatch(addToDo({ id: exercise.id, text: exercise.text, src: exercise.src }));
               notify();
-              }}>Add to list</Button>
+            }}>Add to list</Button>
+            
           </Box>
         ))}
       </Stack>

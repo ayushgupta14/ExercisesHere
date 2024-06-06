@@ -38,22 +38,23 @@ const Navbar = () => {
                         xs: '16px'
                     }
                 }}>
-                <NavLink to='/' style={({ isActive }) => ({
+                <NavLink to='/' className={themeMode === 'dark' ? 'darkText' : 'lightText'} style={({ isActive }) => ({
                     textDecoration: 'none',
-                    color: '#3A1212',
+                    color: isActive ? '#FF2625' : '#3A1212',
                     borderBottom: isActive ? '2px solid #FF2625' : 'none'
                 })} >Home</NavLink>
-                <NavLink to='/exercises' style={({ isActive }) => ({
+
+                <NavLink to='/exercises' className={themeMode === 'dark' ? 'darkText' : 'lightText'} style={({ isActive }) => ({
                     textDecoration: 'none',
-                    color: '#3A1212',
+                    color: isActive ? '#FF2625' : '#3A1212',
                     borderBottom: isActive ? '2px solid #FF2625' : 'none'
                 })}>
                     Exercises
                 </NavLink>
 
-                <NavLink to='/list' style={({ isActive }) => ({
+                <NavLink to='/list' className={themeMode === 'dark' ? 'darkText' : 'lightText'} style={({ isActive }) => ({
                     textDecoration: 'none',
-                    color: '#3A1212',
+                    color: isActive ? '#FF2625' : '#3A1212',
                     borderBottom: isActive ? '2px solid #FF2625' : 'none'
                 })}>
                     To-Do List

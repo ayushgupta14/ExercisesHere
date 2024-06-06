@@ -32,7 +32,7 @@ const HeroBanner = () => {
         </Link>
       </Stack>
 
-      <Typography fontWeight={700} fontSize='200px' sx={{ opacity: 0.1, display: { lg: 'block', xs: 'none' } }}>Exercise</Typography>
+      <Typography fontWeight={700} fontSize='200px' sx={{ opacity: 0.1, display: { lg: 'block', xs: 'none' } }}>ExerciseHere</Typography>
 
       <img src={bannerImg} alt="" className='banner-img' />
 

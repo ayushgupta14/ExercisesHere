@@ -21,9 +21,22 @@ body {
   border-bottom-left-radius: 55px;
 }
 
+.exer-img {
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  width: 600px;
+  margin-top: -100px;
+}
+
+.typo {
+  position: absolute;
+  top: 70px;
+}
+
 .ex-box {
-  width: 400px;
-  height: 445px;
+  width: 360px;
+  height: 400px;
   background: #fff;
   /* border-bottom-left-radius: 20px; */
   border-radius: 25px;
@@ -34,6 +47,24 @@ body {
   padding-bottom: 10px;
   transform: scale(1, 1);
   transition: 0.3s all ease-in-out;
+}
+
+.lightText {
+  color: #3A1212;
+}
+
+
+.lightText:hover {
+  color: #FF2625;
+}
+
+.darkText {
+  color: #3A1212;
+  /* color: '#3A1212', */
+}
+
+.darkText:hover {
+  color: #FF2625;
 }
 
 .ex-box img {
